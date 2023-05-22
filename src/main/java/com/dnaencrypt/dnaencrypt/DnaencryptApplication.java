@@ -18,7 +18,7 @@ public class DnaencryptApplication {
 }
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 class EncryptionController {
     @PostMapping("/encrypt")
     public String encryptText(@RequestBody EncryptionRequest request) throws InputMismatchException, Exception {
