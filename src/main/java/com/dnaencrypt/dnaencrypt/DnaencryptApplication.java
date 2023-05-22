@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class DnaencryptApplication {
 }
 
 @RestController
+@CrossOrigin(origins = "*")
 class EncryptionController {
     @PostMapping("/encrypt")
     public String encryptText(@RequestBody EncryptionRequest request) throws InputMismatchException, Exception {
